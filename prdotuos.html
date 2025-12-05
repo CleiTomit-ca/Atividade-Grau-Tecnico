@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Mil Grau - Produtos</title>
+    
+    <style>
+        :root {
+            --cor-fundo-principal: #f4f4f4;
+            --cor-preto-principal: #1a1a1a;
+            --cor-ouro-queimado: #D4AC0D;
+            --cor-texto-claro: #cccccc;
+            --cor-texto-escuro: #333;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--cor-fundo-principal);
+            color: var(--cor-texto-escuro);
+            margin: 0 auto;
+            max-width: 1200px;
+            padding: 0 10px;
+        }
+
+        a { text-decoration: none; color: var(--cor-texto-escuro); transition: color 0.3s; }
+        a:hover { color: var(--cor-ouro-queimado); }
+        input[type="submit"] { cursor: pointer; border: none; font-weight: bold; transition: background-color 0.3s; }
+
+        /* HEADER E NAV */
+        header {
+            background-color: var(--cor-preto-principal);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid var(--cor-ouro-queimado); 
+            margin: 0 -10px;
+        }
+        
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 15px; }
+        nav a { color: var(--cor-texto-claro); padding: 5px 10px; transition: background-color 0.3s, color 0.3s; }
+        nav a:hover { background-color: var(--cor-ouro-queimado); color: var(--cor-preto-principal); }
+        
+        .secao-titulo {
+            text-align: center;
+            margin: 40px 0 30px;
+            font-size: 2em;
+            color: var(--cor-preto-principal);
+            border-bottom: 2px solid var(--cor-ouro-queimado);
+            padding-bottom: 10px;
+        }
+        
+        /* PRODUTOS: Container e Cards */
+        .lista-de-produtos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .produto {
+            background-color: #ffffff;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            width: calc(33.33% - 15px); /* 3 por linha */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+            margin-bottom: 20px;
+            transition: transform 0.3s, box-shadow 0.3s; 
+        }
+        
+        /* CORREÇÃO E ESTILO DA IMAGEM */
+        .produto-img {
+            width: 100%; 
+            aspect-ratio: 1 / 1; /* Garante que a imagem seja um quadrado perfeito */
+            object-fit: cover; /* Preenche o espaço sem distorcer */
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        
+        /* Efeito HOVER */
+        .produto:hover {
+            transform: translateY(-5px); 
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+        }
+
+        .produto h3 { min-height: 40px; font-size: 1.1em; margin-top: 0; color: var(--cor-preto-principal); }
+        .produto .preco { font-size: 1.3em; color: var(--cor-ouro-queimado); font-weight: bold; margin: 10px 0 15px 0; }
+
+        /* Estilo do botão "Adicionar" */
+        .produto input[type="submit"] {
+            display: block;
+            width: 100%;
+            background-color: var(--cor-ouro-queimado); 
+            color: var(--cor-preto-principal);
+            padding: 10px;
+            border-radius: 5px;
+            text-transform: uppercase;
+        }
+        
+        .produto input[type="submit"]:hover { background-color: #B8860B; }
+
+        .secao-contato {
+            padding: 40px 20px;
+            text-align: center;
+            background-color: #f8f8f8;
+        }
+        
+        .secao-contato h2 {
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        
+        /* FOOTER */
+        footer {
+            background-color: var(--cor-preto-principal);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 0.9em;
+            margin-left: -10px;
+            margin-right: -10px;
+        }
+        footer a { color: var(--cor-texto-claro); }
+        
+        /* RESPONSIVIDADE */
+        @media (max-width: 900px) { .produto { width: calc(50% - 10px); } } /* 2 por linha no tablet */
+        @media (max-width: 600px) { 
+            .produto { width: 100%; } /* 1 por linha no celular */
+            nav ul { flex-direction: column; gap: 5px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Loja Mil Grau</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="carrinho.html">🛒 Carrinho</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2 class="secao-titulo">Catálogo Completo</h2>
+
+        <section class="produtos">
+            <div class="lista-de-produtos">
+                
+                <article class="produto">
+                    <img src="imagens/camisxadres.jpg" 
+                         alt="Camisa Xadrez Casual" 
+                         class="produto-img">
+                    <h3>CAMISA XADREZ CASUAL</h3>
+                    <p class="preco">R$ 129,90</p>
+                    <input type="submit" value="Adicionar">
+                </article>
+
+                <article class="produto">
+                    <img src="imagens/camisalacoste2.jpg" 
+                         alt="Camisa Polo Lacoste" 
+                         class="produto-img">
+                    <h3>CAMISA POLO LACOSTE</h3>
+                    <p class="preco">R$ 39,99</p>
+                    <input type="submit" value="Adicionar">
+                </article>
+
+                <article class="produto">
+                    <img src="imagens/camisacanelada2.jpg" 
+                         alt="Camisa Canelada" 
+                         class="produto-img">
+                    <h3>CAMISA CANELADA</h3>
+                    <p class="preco">R$ 49,99</p>
+                    <input type="submit" value="Adicionar">
+                </article>
+
+                <article class="produto">
+                    <img src="imagens/bermudanike.jpg" 
+                         alt="Bermuda NK Sportwear" 
+                         class="produto-img">
+                    <h3>BERMUDA NK SPORTWEAR</h3>
+                    <p class="preco">R$ 39,99</p>
+                    <input type="submit" value="Adicionar">
+                </article>
+
+                <article class="produto">
+                    <img src="imagens/chineloslide.jpg" 
+                         alt="CHINELO SLIDE - NUVEM" 
+                         class="produto-img">
+                    <h3>CHINELO SLIDE - NUVEM</h3>
+                    <p class="preco">R$ 69,99</p>
+                    <input type="submit" value="Adicionar">
+                </article>
+
+                <article class="produto">
+                    <img src="imagens/bermudasarja.jpg" 
+                         alt="BERMUDA SARJA CARGO HIGH" 
+                         class="produto-img">
+                    <h3>BERMUDA SARJA CARGO HIGH</h3>
+                    <p class="preco">R$ 49,99</p>
+                    <input type="submit" value="Adicionar">
+                </article>
+
+                <article class="produto">
+                    <img src="imagens/bermudalacoste.jpg" 
+                         alt="BERMUDA LINHO LACOSTE" 
+                         class="produto-img">
+                    <h3>BERMUDA LINHO LACOSTE</h3>
+                    <p class="preco">R$ 49,99</p>
+                    <input type="submit" value="Adicionar">
+                </article>
+
+                <article class="produto">
+                    <img src="imagens/calçajeans.jpg" 
+                         alt="CALÇA JEANS RETA " 
+                         class="produto-img">
+                    <h3>CALÇA RETA ESTONADA</h3>
+                    <p class="preco">R$ 119,99</p>
+                    <input type="submit" value="Adicionar">
+                </article>
+
+                <article class="produto">
+                    <img src="imagens/bonelacoste.jpg" 
+                         alt="BONÉ LACOSTE SPORT CLUB" 
+                         class="produto-img">
+                    <h3>BONÉ LACOSTE SPORT CLUB</h3>
+                    <p class="preco">R$ 49,99</p>
+                    <input type="submit" value="Adicionar">
+                </article>
+
+                <article class="produto">
+                    <img src="imagens/regatacanelada.jpg" 
+                         alt="REGATA CANELADA" 
+                         class="produto-img">
+                    <h3>REGATA CANELADA</h3>
+                    <p class="preco">R$ 49,99</p>
+                    <input type="submit" value="Adicionar">
+                </article>
+
+                <article class="produto">
+                    <img src="imagens/calçacargo.jpg" 
+                         alt="CALÇA CARGO ESTONADA" 
+                         class="produto-img">
+                    <h3>CALÇA CARGO ESTONADA</h3>
+                    <p class="preco">R$ 119,99</p>
+                    <input type="submit" value="Adicionar">
+                </article>
+
+                <article class="produto">
+                    <img src="imagens/meiasnike.jpg" 
+                         alt="MEIA ESPORTIVA PREMIUM" 
+                         class="produto-img">
+                    <h3>MEIA ESPORTIVA PREMIUM</h3>
+                    <p class="preco">R$ 19,99</p>
+                    <input type="submit" value="Adicionar">
+                </article>
+                
+            </div>
+        </section>
+    </main>
+
+        <section class="secao-contato">
+             <h2>Entre em contato</h2>
+             <p>Whatsapp (71) 99195-1775</p>
+             <P>Instagram: Loja Mil Grau</P>
+        </section>
+    <hr>
+    <footer>
+        <p>&copy; 2025 Loja Mil Grau. Todos os direitos reservados.</p>
+        <div class="links-uteis">
+            <a href="trocas.html">Política de Troca</a> |
+            <a href="privacidade.html">Política de Privacidade</a> |
+            <a href="termos.html">Termos de Uso</a>
+        </div>
+    </footer>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
