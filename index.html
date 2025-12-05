@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Mil Grau - Página Inicial</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4; 
+            color: #333;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #1a1a1a;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #D4AC0D;
+        }
+
+        /* 2. HEADER E NAV */
+        header {
+            background-color: #1a1a1a; 
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #D4AC0D;
+        }
+        
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex; 
+            justify-content: center;
+            gap: 15px;
+        }
+
+        nav a {
+            color: #cccccc;
+            padding: 5px 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #D4AC0D;
+            color: #1a1a1a;
+        }
+        
+        /* 3. MAIN: Destaque e Ações */
+        main {
+            padding: 20px;
+        }
+
+        .banner-destaque {
+            background-color: #333333;
+            color: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .botao-acao {
+            display: inline-block;
+            background-color: #D4AC0D; 
+            color: #1a1a1a;
+            padding: 10px 25px; /* Padding maior */
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .botao-acao:hover {
+            background-color: #B8860B; 
+        }
+
+        .titulo-contraste {
+            background-color: #f3f3f0; 
+            color: #1a1a1a; 
+            padding: 10px 25px; 
+            margin: 0 auto 30px auto;
+            width: fit-content; 
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 1.5em;
+        }
+
+        .lista-produtos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .produto {
+            background-color: #ffffff;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            width: 30%; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s, box-shadow 0.3s; /* Transição para o hover */
+        }
+        
+        .produto:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .produto img {
+            width: 100%;
+            height: 200px; 
+            object-fit: cover; 
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .produto .preco {
+            font-size: 1.3em;
+            color: #D4AC0D; 
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .botao-ver {
+            display: block;
+            background-color: #1a1a1a; 
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .botao-ver:hover {
+            background-color: #D4AC0D;
+            color: #1a1a1a;
+        }
+
+        .secao-contato {
+            padding: 40px 20px;
+            text-align: center;
+            background-color: #f8f8f8;
+        }
+        
+        .secao-contato h2 {
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: #cccccc;
+        }
+        
+        @media (max-width: 600px) {
+            .produto {
+                width: 100%;
+            }
+            nav ul {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Loja Mil Grau</h1> <br>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="carrinho.html">🛒 Carrinho</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <hr>
+
+    <main>
+        <section class="banner-destaque">
+            <h2>Novidades Chegando!</h2>
+            <p>Confira nossa coleção Outono/Inverno com até 30% de desconto.</p>
+            <a href="produtos.html" class="botao-acao">Ver Agora</a>
+        </section>
+
+        <section class="produtos-destaque">
+            <h2 class="titulo-contraste">🔥 MELHORES OFERTAS</h2>
+
+            <div class="lista-produtos">
+                <article class="produto">
+                    <img src="imagens/camisxadres.jpg" alt="atividade">
+                    <h3>Camisa Xadrez Casual</h3>
+                    <p class="preco">R$ 129,90</p>
+                    <a href="detalhe-produto1.html" class="botao-ver">Ver Detalhes</a>
+                </article>
+
+                <article class="produto">
+                    <img src="imagens/calcaskinny.jpg" alt="atividade">
+                    <h3>Calça Jeans Skinny</h3>
+                    <p class="preco">R$ 189,90</p>
+                    <a href="detalhe-produto2.html" class="botao-ver">Ver Detalhes</a>
+                </article>
+
+                <article class="produto">
+                    <img src="imagens/casaco.jpg" alt="atividade">
+                    <h3>Moletom New Era Vermelho</h3>
+                    <p class="preco">R$ 229,90</p>
+                    <a href="detalhe-produto2.html" class="botao-ver">Ver Detalhes</a>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="secao-contato">
+             <h2>Entre em contato</h2>
+             <p>Whatsapp (71) 99195-1775</p>
+             <P>Instagram: Loja Mil Grau</P>
+        </section>
+
+    </main>
+
+    <hr>
+    
+    <footer>
+        <p>&copy; 2025 Loja Mil Grau. Todos os direitos reservados.</p>
+        <div class="links-uteis">
+            <a href="trocas.html">Política de Troca</a> |
+            <a href="privacidade.html">Política de Privacidade</a> |
+            <a href="termos.html">Termos de Uso</a>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script> 
+
+</body>
+</html>
