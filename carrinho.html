@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Mil Grau - Carrinho</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4; 
+            color: #333;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #1a1a1a;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #D4AC0D;
+        }
+
+        /* HEADER */
+        header {
+            background-color: #1a1a1a; 
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #D4AC0D;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        nav a {
+            color: #cccccc;
+            padding: 5px 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #D4AC0D;
+            color: #1a1a1a;
+        }
+
+        main {
+            padding: 25px;
+        }
+
+        h2.titulo-carrinho {
+            background-color: #f3f3f0;
+            color: #1a1a1a;
+            padding: 10px 25px;
+            width: fit-content;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        #carrinho-itens {
+            margin-top: 20px;
+        }
+
+        .item-carrinho {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            box-shadow: 0px 3px 8px rgba(0,0,0,0.08);
+        }
+
+        .item-carrinho img {
+            width: 110px;
+            height: 110px;
+            border-radius: 8px;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+
+        .info-item {
+            flex: 1;
+        }
+
+        .info-item h4 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+
+        .preco-item {
+            color: #D4AC0D;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        .controles-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-quantidade {
+            padding: 5px 10px;
+            background-color: #D4AC0D;
+            color: #1a1a1a;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .btn-quantidade:hover {
+            background-color: #B8860B;
+        }
+
+        .btn-remover {
+            padding: 5px 10px;
+            background-color: #cc0000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-remover:hover {
+            background-color: #a30000;
+        }
+
+        .subtotal-item {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-left: 15px;
+        }
+
+        .carrinho-vazio {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 1.2em;
+            color: #666;
+        }
+
+        .acoes-carrinho {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .acoes-carrinho button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        #limpar-carrinho {
+            background-color: #cc0000;
+            color: white;
+        }
+
+        #limpar-carrinho:hover {
+            background-color: #a30000;
+        }
+
+        #finalizar-compra {
+            background-color: #D4AC0D;
+            color: #1a1a1a;
+        }
+
+        #finalizar-compra:hover {
+            background-color: #B8860B;
+        }
+
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: #cccccc;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Loja Mil Grau</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="carrinho.html">🛒 Carrinho</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2 class="titulo-carrinho">🛒 Seu Carrinho</h2>
+
+        <div id="carrinho-itens"></div>
+
+        <h3 style="text-align:center; margin-top:20px;">
+            Total: <span id="total-carrinho">R$ 0,00</span>
+        </h3>
+
+        <div class="acoes-carrinho">
+            <button id="limpar-carrinho">🗑 Limpar Carrinho</button>
+            <button id="finalizar-compra">✔ Finalizar Compra</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Loja Mil Grau. Todos os direitos reservados.</p>
+        <div class="links-uteis">
+            <a href="trocas.html">Política de Troca</a> |
+            <a href="privacidade.html">Política de Privacidade</a> |
+            <a href="termos.html">Termos de Uso</a>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
